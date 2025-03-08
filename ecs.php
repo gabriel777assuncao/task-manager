@@ -12,8 +12,8 @@ use PhpCsFixer\Fixer\LanguageConstruct\SingleSpaceAroundConstructFixer;
 use PhpCsFixer\Fixer\Operator\{ConcatSpaceFixer, NotOperatorWithSuccessorSpaceFixer};
 use PhpCsFixer\Fixer\PhpUnit\{PhpUnitDataProviderStaticFixer, PhpUnitMethodCasingFixer};
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
-use PhpCsFixer\Fixer\Whitespace\{ArrayIndentationFixer, BlankLineBeforeStatementFixer};
 use PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer;
+use PhpCsFixer\Fixer\Whitespace\{ArrayIndentationFixer, BlankLineBeforeStatementFixer};
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
