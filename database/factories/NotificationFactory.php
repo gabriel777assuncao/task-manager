@@ -12,7 +12,7 @@ class NotificationFactory extends Factory
         return [
             'message' => fake()->sentence,
             'user_id' => User::factory(),
-            'is_read' => fake()->boolean
+            'is_read' => fake()->boolean,
         ];
     }
 }
