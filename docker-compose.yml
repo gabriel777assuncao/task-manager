@@ -1,17 +1,16 @@
-version: '3.8'
-
 services:
-    db:
-        image: postgres:16
-        container_name: my_postgres
+    postgres:
+        image: postgres:17.2
+        container_name: TO--postgresql--17.2--5432
         restart: always
-        env_file:
-            - .env
         ports:
-            - "${POSTGRES_PORT}:5432"
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: task_management
         volumes:
-            - pgdata:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql/data
 
 volumes:
-    pgdata:
-        driver: local
+    postgres_data:
