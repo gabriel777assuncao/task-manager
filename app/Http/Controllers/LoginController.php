@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use Illuminate\Http\{JsonResponse, Request};
+use Illuminate\Validation\UnauthorizedException;
 
 class LoginController extends Controller
 {
     public function __invoke(Request $request): JsonResponse
     {
-        User::create($request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]));
+        if (auth()->attempt($request->only('email', 'password'))) {
+            return response()->json([
+                'token' => $request->user()->createToken('token')->plainTextToken,
+                'message' => 'Success',
+                'status' => 200,
+            ]);
+        }
 
-        auth()->attempt($request->only('email', 'password'));
+        throw new UnauthorizedException('Invalid credentials');
     }
 }
