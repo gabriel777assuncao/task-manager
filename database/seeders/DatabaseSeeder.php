@@ -2,13 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\{Attachment, Comment, Notification, Tag, Task, User};
 use Illuminate\Database\Seeder;
-use App\Models\User;
-use App\Models\Task;
-use App\Models\Tag;
-use App\Models\Comment;
-use App\Models\Attachment;
-use App\Models\Notification;
 
 class DatabaseSeeder extends Seeder
 {

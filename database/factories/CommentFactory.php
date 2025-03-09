@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\{Task, User};
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Task;
-use App\Models\User;
 
 class CommentFactory extends Factory
 {
