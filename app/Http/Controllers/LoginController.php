@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\{JsonResponse, Request};
-use Illuminate\Validation\UnauthorizedException;
 
 class LoginController extends Controller
 {
@@ -17,6 +16,6 @@ class LoginController extends Controller
             ]);
         }
 
-        throw new UnauthorizedException('Invalid credentials');
+        return response()->json(['message' => 'Invalid credentials'], 401);
     }
 }
