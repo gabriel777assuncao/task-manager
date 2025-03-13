@@ -3,15 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany, HasMany};
+use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
 class Task extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'title',
+        'created_by',
         'description',
         'status',
         'due_date',
